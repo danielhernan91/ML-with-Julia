@@ -67,6 +67,5 @@ predicciones = MLJ.predict_mode(mach, rows=test_rows)
 
 # 6. EVALUAR EL MODELO
 # MLJ tiene métricas incorporadas
-accuracy = accuracy(predicciones, y[test_rows])
-
-println("Precisión (Accuracy) del modelo MLJ: ", round(accuracy * 100, digits=2), "%")
+accuracy_score = mean(predicciones_clase .== y_real)
+println("\nPrecisión (Accuracy) en datos de prueba: ", round(accuracy_score * 100, digits=2), "%")
