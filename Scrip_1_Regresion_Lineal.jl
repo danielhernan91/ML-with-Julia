@@ -68,13 +68,13 @@ rango_lambda = range(model_instance, :lambda, lower=0.01, upper=100.0, scale=:lo
 # 2. CONFIGURAR LA ESTRATEGIA DE OPTIMIZACIÓN
 estrategia_cv = CV(nfolds=6)
 
-modelo_RegML = TunedModel(
-    model=model_instance, # <-- Reuse the instance here
-    resampling=estrategia_cv,
-    tuning=Grid(resolution=10),
-    range=rango_lambda,
-    measure=rms
-)
+#modelo_RegML = TunedModel(
+#    model=model_instance, # <-- Reuse the instance here
+#    resampling=estrategia_cv,
+#    tuning=Grid(resolution=10),
+#    range=rango_lambda,
+#    measure=rms
+#)
 # Creamos el modelo "RegML"
 modelo_RegML = TunedModel(
     model=RidgeRegressor(),
